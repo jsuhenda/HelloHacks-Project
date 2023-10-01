@@ -5,8 +5,8 @@ import React , { useState } from 'react';
 import './globals.css';
 import OpenAI from 'openai';
 
-const dotenv = require('dotenv')
-dotenv.config({path: '../../.env'})
+// const dotenv = require('dotenv')
+// dotenv.config({path: '../../.env'})
 
 console.log('hi '+ process.env.OPENAI_API_KEY)
 
