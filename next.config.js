@@ -2,6 +2,6 @@
 
 module.exports = {
   env: {
-    OPENAI_API_KEY: "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",
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
 }
