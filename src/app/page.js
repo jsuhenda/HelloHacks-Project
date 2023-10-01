@@ -5,18 +5,18 @@ import React , { useReducer, useState } from 'react';
 import './globals.css';
 import OpenAI from 'openai';
 
-// const dotenv = require('dotenv')
-// dotenv.config({path: '../../.env'})
-// const openai = new OpenAI({
-//   apiKey: process.env.OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
-//   dangerouslyAllowBrowser: true
-// });
+const dotenv = require('dotenv')
+dotenv.config({path: '../../.env'})
+console.log(process.env.NEXT_PUBLIC_OPENAI_API_KEY)
+const openai = new OpenAI({
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
+  dangerouslyAllowBrowser: true
+});
 
-// const stream = await openai.chat.completions.create({
-//   model: 'gpt-4',
-//   messages: [{ role: 'user', content: symptoms }],
-//   stream: true,
-// });
+const chatCompletion = async (symptoms) => { await openai.chat.completions.create({
+  messages: [{ role: 'user', content: symptoms }],
+  model: 'gpt-3.5-turbo',
+})};
 
 const formReducer = (state, event) => {
   return {
